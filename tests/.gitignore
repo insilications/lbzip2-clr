@@ -3,8 +3,6 @@
 *.o
 *~
 .deps
-Makefile
-Makefile.in
 core
 driver
 minbzcat

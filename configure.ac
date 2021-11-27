@@ -16,7 +16,7 @@
 
 dnl TODO: check for GCC builtins: expect, prefetch, ctz, ctzl, ctzll
 
-AC_PREREQ([2.64])
+AC_PREREQ([2.71])
 AC_INIT([lbzip2], [2.5])
 
 AC_CONFIG_SRCDIR([src/main.c])
@@ -29,12 +29,11 @@ AM_SILENT_RULES([yes])
 
 AC_PROG_LN_S
 AC_PROG_RANLIB
-AC_PROG_CC_C89
-
+AC_PROG_CC
 gl_ASSERT_NO_GNULIB_TESTS
 gl_ASSERT_NO_GNULIB_POSIXCHECK
 gl_EARLY
-
+gl_INIT
 
 AC_ARG_ENABLE([tracing],
   [AS_HELP_STRING([--enable-tracing],
