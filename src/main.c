@@ -267,7 +267,7 @@ usage(void)
     failx(errno, "printf()");
   if (0 != fclose(stdout))
     failx(errno, "fclose(stdout)");
-  gcov_flush();
+  gcov_dump();
   _exit(EX_OK);
 }
 
@@ -279,7 +279,7 @@ version(void)
     failx(errno, "printf()");
   if (0 != fclose(stdout))
     failx(errno, "fclose(stdout)");
-  gcov_flush();
+  gcov_dump();
   _exit(EX_OK);
 }
 
@@ -981,6 +981,6 @@ main(int argc, char **argv)
     failx(errno, "close(stdout)");
   }
 
-  gcov_flush();
+  gcov_dump();
   _exit(warned ? EX_WARN : EX_OK);
 }

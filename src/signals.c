@@ -200,7 +200,7 @@ terminate(int sig)
 
   xempty(&set);
   xadd(&set, sig);
-  gcov_flush();
+  gcov_dump();
   xmask(SIG_UNBLOCK, &set, NULL);
 
   _exit(EX_FAIL);
@@ -299,7 +299,7 @@ bailout(void)
 {
   if (pthread_equal(pthread_self(), main_thread)) {
     cleanup();
-    gcov_flush();
+    gcov_dump();
     xmask(SIG_UNBLOCK, &blocked, NULL);
     _exit(EX_FAIL);
   }

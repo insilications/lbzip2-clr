@@ -120,8 +120,8 @@ enum error {
 
 
 #if ENABLE_COVERAGE + 0
-void __gcov_flush(void);
-#define gcov_flush() __gcov_flush()
+void __gcov_dump(void);
+#define gcov_dump() __gcov_dump()
 #else
-#define gcov_flush()
+#define gcov_dump()
 #endif
